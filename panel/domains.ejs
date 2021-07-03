@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Domains</title>
+
+        <link rel="stylesheet" href="/assets/styles.css">
+        <link rel="icon" href="/assets/lilalogoclear.png" type="image/x-icon" />
+
+        <script defer src='/assets/script.js'></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/">
+                    <span>Home</span>
+                </a>
+                |
+                <a href="/logs">
+                    <span>Logs</span>
+                </a>
+                |
+                <a href="/domains">
+                    <span>Domains</span>
+                </a>
+                |
+                <a href="/ip">
+                    <span>IP Management</span>
+                </a>
+                <div style="float: right">
+                    |
+                    <a href="/account">
+                        <span><%= user.username %></span>
+                    </a>
+                    |
+                </div>
+            </nav>
+        </header>
+        <form id="add-form" class="form">
+            <input type="text" name="ip" placeholder="IP" required>
+            <input type="text" name="domain" placeholder="Domain" required>
+            <input type="text" name="port" placeholder="Port" required>
+            <input type="submit" value="Submit">
+        </form>
+        <div class="logs">
+            <ul id="logs">
+                <% domains.forEach(function(domain) { %>
+                    <li>
+                        <span class="domain"><%= domain.domain %></span> => <span class="ip"><%= domain.ip %></span>:<span class="port"><%= domain.port %></span>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </body>
+</html>
