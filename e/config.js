@@ -3,9 +3,9 @@ const config = {
     //copy the below in {} for each user
     users: [
         {
-            username: "Cyclingbob",
+            username: "Admin",
             password: "Test",
-            email: "bob21567@outlook.com"
+            email: "test@test.com"
         }
     ],
 
