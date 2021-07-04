@@ -11,7 +11,9 @@ This Proxy Server is written using simular code to [wiresboy-exe's dns proxy ser
 
 3) Install the required dependencies: `npm i`.
 
-4) Run the server using `node .` in the directory that `index.js` lies in.
+4) Ensure ports 80 and 2052 are open through the firewall (if you have one) and port forwarded, if you use a router.
+
+5) Run the server using `node .` in the directory that `index.js` lies in.
 
 # Using Cloudflare
 
