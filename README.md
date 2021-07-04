@@ -29,4 +29,6 @@ For "Port" enter the port your webserver runs on.
 
 Then click Submit. If all has been done correctly, your domain should resolve!
 
+# Customisation
+
 To customize display and user access, edit the `config.js` in the main directory of your clone (where `index.js` lies)
