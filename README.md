@@ -33,4 +33,6 @@ Then click Submit. If all has been done correctly, your domain should resolve!
 
 To customize display and user access, edit the `config.js` in the main directory of your clone (where `index.js` lies)
 
-# ©Cyclingbob 2021. All rights reserved. Unauthorised distribution or modification is not permitted.
+#Copyright
+
+©Cyclingbob 2021. All rights reserved. Unauthorised distribution or modification is not permitted.
