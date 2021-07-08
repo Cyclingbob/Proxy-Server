@@ -1,7 +1,7 @@
 # Proxy-Server
 
 This is a lightweight Node.js proxy server to be used with [Cloudflare](https://cloudflare.com "Cloudflare"). This proxy server allows you to match the right domain to the right web server all running on the same IP.
-This Proxy Server is written using simular code to [wiresboy-exe's dns proxy server](https://github.com/wiresboy-exe/dns "dns")
+This Proxy Server is written using the backend code from [wiresboy-exe's dns proxy server](https://github.com/wiresboy-exe/dns "dns")
 
 # Installation
 
