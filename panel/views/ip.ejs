@@ -1,1 +1,144 @@
+<html>
+    <head>
+        <title>Logs</title>
 
+        <link rel="stylesheet" href="/assets/styles.css">
+        <link rel="icon" href="/assets/lilalogoclear.png" type="image/x-icon" />
+
+        <script defer src='/assets/script.js'></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/">
+                    <span>Home</span>
+                </a>
+                |
+                <a href="/logs">
+                    <span>Logs</span>
+                </a>
+                |
+                <a href="/domains">
+                    <span>Domains</span>
+                </a>
+                |
+                <a href="/ip">
+                    <span>IP Management</span>
+                </a>
+                <div style="float: right">
+                    |
+                    <a href="/account">
+                        <span><%= user.username %></span>
+                    </a>
+                    |
+                </div>
+            </nav>
+        </header>
+        <form id="search-form" class="form">
+            <input type="text" name="ip" placeholder="Search...">
+            <input type="submit" value="Search">
+        </form>
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'allowed')">Allowed</button>
+            <button class="tablinks" onclick="openTab(event, 'blocked')">Blocked</button>
+            <button class="tablinks" onclick="openTab(event, 'challenge')">Challenged</button>
+            <button class="tablinks" onclick="openTab(event, 'js_challenge')">JS challenged</button>
+        </div>
+        <div id="allowed" class="tabcontent">
+            <table>
+                <tr>
+                    <h1>IPs that have visited, but are not blocked.</h1>
+                    <% allowed_ips.forEach(function(ip) { %>
+                        <tr>
+                            <td>
+                                <span class="ip"><%= ip %></span>
+                            </td>
+                            <td>
+                                <button onclick="block(this, '<%= ip %>')">Block</button>
+                            </td>
+                            <td>
+                                <button onclick="challenge(this, '<%= ip %>')">Challenge</button>
+                            </td>
+                            <td>                                        
+                                <button onclick="js_challenge(this, '<%= ip %>')">JS Challenge</button>
+                            </td>                                        
+                        </tr>
+                    <% }); %>
+                </tr>
+            </table>
+        </div>
+        <div id="blocked" class="tabcontent">
+            <h1>IPs that you have blocked from accessing your server.</h1>
+            <form id="block-form" class="form">
+                <input type="text" name="ip" placeholder="Enter an ip to ban..">
+                <input type="submit" value="Block">
+            </form>
+            <table>
+                <tr>
+                    <% blocked_ips.forEach(function(ip) { %>
+                        <tr>
+                            <td>
+                                <span class="ip"><%= ip %></span>
+                            </td>
+                            <td>
+                                <button onclick="whitelist(this, '<%= ip %>')">Whitelist</button>
+                            </td>
+                            <td>
+                                <button onclick="challenge(this,'<%= ip %>')">Challenge</button>
+                            </td>
+                            <td>                                        
+                                <button onclick="js_challenge(this,'<%= ip %>')">JS Challenge</button>
+                            </td>                                        
+                        </tr>
+                    <% }); %>
+                </tr>
+            </table>
+        </div>
+        <div id="challenge" class="tabcontent">
+            <table>
+                <tr>
+                    <h1>IPs that you've set to complete a challenge before accessing your site.</h1>
+                    <% challenge_ips.forEach(function(ip) { %>
+                        <tr>
+                            <td>
+                                <span class="ip"><%= ip %></span>
+                            </td>
+                            <td>
+                                <button onclick="block(this, '<%= ip %>')">Block</button>
+                            </td>
+                            <td>
+                                <button onclick="whitelist(this, '<%= ip %>')">Whitelist</button>
+                            </td>
+                            <td>                                        
+                                <button onclick="js_challenge(this, '<%= ip %>')">JS Challenge</button>
+                            </td>                                        
+                        </tr>
+                    <% }); %>
+                </tr>
+            </table>
+        </div>
+        <div id="js_challenge" class="tabcontent">
+            <table>
+                <tr>
+                    <h1>IPs that you've set to complete a Javascript challenge before accessing your site.</h1>
+                    <% js_challenge_ips.forEach(function(ip) { %>
+                        <tr>
+                            <td>
+                                <span class="ip"><%= ip %></span>
+                            </td>
+                            <td>
+                                <button onclick="block(this, '<%= ip %>')">Block</button>
+                            </td>
+                            <td>
+                                <button onclick="whitelist(this, '<%= ip %>')">Whitelist</button>
+                            </td>
+                            <td>                                        
+                                <button onclick="challenge(this, '<%= ip %>')">Challenge</button>
+                            </td>                                        
+                        </tr>
+                    <% }); %>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
