@@ -1,0 +1,5 @@
+<% logs.forEach(function(log, index) { %>
+    <li>
+        <span class="time"><%= dates[index] %></span> info: <span class="ip"><%= log.ip %></span> visited <span class="domain"><%= log.domain %></span><span class="path"><%= log.path %></span> in <span class="country"><%= countries[index] %></span>
+    </li>
+<% }); %>
