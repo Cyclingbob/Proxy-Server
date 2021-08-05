@@ -35,11 +35,11 @@ For "Port" enter the port your webserver runs on.
 
 Then click Submit. If all has been done correctly, your domain should resolve!
 
-# Using Mongodb.
+# Using Mongodb
 
 Mongodb is a databse service that allows the server to save requests and match them to IPs.
 
-Head to [mongodb.com](https://account.mongodb.com/account "Mongodb") and sign up. If this link doesn't work, go to the main page [mongodb.com](https://mongodb.com "Mongodb") . Create a cluster. Then, allow IP access to your server's IP in `Network Access` on the left side. After this, click on `Database Access` above. Create a user and password. Ensure it has access to all databases and full read/write access. Keep the credentials, you'll need them in a minute. Click on `Databases` near the top of the left side. Click `Connect` and click `Connect your application`. Copy this into `config.js` in the `mongodb_connection_string` property, replacing username and password with your user credentials and myFirstDatabase with `DNS`
+Head to [mongodb.com](https://account.mongodb.com/account "Mongodb") and sign up. If this link doesn't work, go to the main page [mongodb.com](https://mongodb.com "Mongodb") . Create a cluster. Then, allow IP access to your server's IP in `Network Access` on the left side. After this, click on `Database Access` above. Create a user and password, ensuring it has access to all databases and full read/write access. Keep the credentials, you'll need them in a minute. Click on `Databases` near the top of the left side. Then, click `Connect` and click `Connect your application`. Copy this into `config.js` in the `mongodb_connection_string` property, replacing username and password with your user credentials and myFirstDatabase with `DNS`.
 
 # Customisation
 
