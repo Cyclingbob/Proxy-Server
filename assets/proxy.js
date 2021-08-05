@@ -10,9 +10,23 @@ async function proxy(client_req, client_res) {
     let ip = ''
 
     if(client_req.headers['cf-connecting-ip']){
+
         ip = client_req.headers['cf-connecting-ip']
+
     } else{
+
         ip = client_req.connection.remoteAddress
+
+    }
+
+    if(client_req.headers['cf-ipcountry']){
+
+        country = client_req.headers['cf-ipcountry']
+
+    } else {
+
+        country = 'Unknown'
+
     }
 
     let domain = domains.find(x => x.domain === client_req.headers.host)
@@ -28,17 +42,7 @@ async function proxy(client_req, client_res) {
 
         };
         
-    } else{
-
-        logs.add({
-
-            type: 'visit',
-            domain: client_req.headers.host,
-            date: Date.now(),
-            ip,
-            path: client_req.url
-
-        })
+    } else {
 
         options = {
 
