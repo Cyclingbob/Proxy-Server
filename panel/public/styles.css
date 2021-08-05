@@ -61,6 +61,10 @@ header nav a span:hover {
     background-color: #116f87;
 }
 
+form input[type="submit"]:hover{
+    cursor: pointer;
+}
+
 .form input::placeholder {
     color: white;
 }
@@ -74,12 +78,118 @@ header nav a span:hover {
 
     border-radius: 8px;
 
-    background-color: #dcdcdc
+    background-color: #dcdcdc;
+
+    overflow: auto;
 }
 
-.logs ul {
+ul {
     list-style-type: none;
 
     padding: 0;
     margin: 0px 5px;
+
+    overflow: auto;
+}
+
+
+td button {
+    color: white;
+    background-color: #00ccff;
+
+    border: none;
+    border-radius: 8px;
+
+    margin: 3px;
+}
+
+td button:hover{
+    cursor: pointer;
+
+    background-color: #00b0dc;
+}
+
+table {
+    border-spacing: 0;
+    margin: 10px;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 200
+}
+
+td {
+    border-bottom: 1px solid #116f87;
+    margin: 0;
+    padding: 5px;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    }
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.delete-domain {
+    color: white;
+    background-color: #00ccff;
+
+    border: none;
+    border-radius: 8px;
+
+    margin: 3px;
+}
+
+.delete-domain:hover{
+    cursor: pointer;
+
+    background-color: #00b0dc;
+}
+
+.logs::-webkit-scrollbar {
+    width: 12px;
+}
+
+.logs::-webkit-scrollbar-track {
+    background: #dcdcdc
+}
+
+.logs::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.logs::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
