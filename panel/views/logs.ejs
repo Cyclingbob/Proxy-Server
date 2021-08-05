@@ -38,22 +38,13 @@
             <input type="text" name="ip" placeholder="Search by IP">
             <input type="text" name="domain" placeholder="Search by Domain">
             <input type="text" name="path" placeholder="Search by Path">
+            <input type="submit" value="Find">
         </form>
         <div class="logs">
             <ul id="logs">
-                <li>
-                    <span class="time">[1.7.2021 at 18:36:40]</span> info: <span class="ip">82.42.222.79</span> visited <span class="domain">cyclingbob.cf</span>
-                </li>
-                <li>
-                    <span class="time">[1.7.2021 at 18:36:40]</span> info: <span class="ip">82.42.222.79</span> visited <span class="domain">cyclingbob.cf</span>
-                </li>
-                <li>
-                    <span class="time">[1.7.2021 at 18:36:40]</span> info: <span class="ip">82.42.222.79</span> visited <span class="domain">cyclingbob.cf</span>
-                </li>
-
-                <% logs.forEach(function(log) { %>
+                <% logs.forEach(function(log, index) { %>
                     <li>
-                        <span class="time"><%= log.time.formatted %></span> info: <span class="ip"><%= log.ip %></span> visited <span class="domain"><%= log.domain %></span><span class="path"><%= log.path %></span> in <span class="country"><%= log.country %></span>
+                        <span class="time"><%= dates[index] %></span> info: <span class="ip"><%= log.ip %></span> visited <span class="domain"><%= log.domain %></span><span class="path"><%= log.path %></span> in <span class="country"><%= countries[index] %></span>
                     </li>
                 <% }); %>
             </ul>
