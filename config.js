@@ -30,6 +30,16 @@ const config = {
     */
 
     use_0_in_time: true
+    
+    /* These items below allows this server to access Cloudflare API. This is useful if you want to block/unblock and manage IPs visiting your site. These are required. */
+
+    cloudflare_api_key: '',
+    cloudflare_email: '',
+    cloudflare_account_id: '',
+
+    /* This allows the server to save requests to mongodb. This is required */
+
+    mongodb_connection_string: ''
 
     
 }
