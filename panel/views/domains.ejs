@@ -35,8 +35,8 @@
             </nav>
         </header>
         <form id="add-form" class="form">
-            <input type="text" name="ip" placeholder="IP" required>
             <input type="text" name="domain" placeholder="Domain" required>
+            <input type="text" name="ip" placeholder="IP" required>
             <input type="text" name="port" placeholder="Port" required>
             <input type="submit" value="Submit">
         </form>
@@ -44,7 +44,7 @@
             <ul id="logs">
                 <% domains.forEach(function(domain) { %>
                     <li>
-                        <span class="domain"><%= domain.domain %></span> => <span class="ip"><%= domain.ip %></span>:<span class="port"><%= domain.port %></span>
+                        <span class="domain"><%= domain.domain %></span> => <span class="ip"><%= domain.ip %></span>:<span class="port"><%= domain.port %></span>   <button class="delete-domain" onclick="remove_domain('<%= domain.domain %>')">Delete</button>
                     </li>
                 <% }); %>
             </ul>
