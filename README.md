@@ -33,7 +33,7 @@ For "IP" enter 127.0.0.1 if your webserver runs on the same server as the Proxy 
 For "Domain" enter your domain name, including the subdomain if you used one for your `A` record.
 For "Port" enter the port your webserver runs on.
 
-Then click Submit. If all has been done correctly, your domain should resolve!
+Then click Submit. Follow the mongodb instructions below and if all has been done correctly, your domain should resolve!
 
 # Using Mongodb
 
