@@ -3,9 +3,9 @@
 This is a lightweight Node.js proxy server to be used with [Cloudflare](https://cloudflare.com "Cloudflare"). This proxy server allows you to match the right domain to the right web server all running on the same IP.
 It is written using the backend code from [wiresboy-exe's dns proxy server](https://github.com/wiresboy-exe/dns "dns")
 
-This server has many features, including logging all requests, IP management through cloudflare to block/challenge/javscript challenge requests.
+This server has many features, including logging all requests, IP management through cloudflare to block/challenge/javscript challenge requests. It also has built in cache control which allows it to monitor requests and serve them quickly. Cache is only stored in runtime and is cleared once the server is stopped.
 
-It uses Cloudflare and Mongodb to function effectively and both are free services.
+This server uses Cloudflare and Mongodb to function effectively and both are free services.
 
 # Installation
 
