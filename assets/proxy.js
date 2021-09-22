@@ -3,31 +3,9 @@ const logs = require('../assets/logs.js')
 
 const http = require('http')
 
-async function proxy(client_req, client_res) {
+async function proxy(client_req, client_res, emitter) {
 
     var options
-
-    let ip = ''
-
-    if(client_req.headers['cf-connecting-ip']){
-
-        ip = client_req.headers['cf-connecting-ip']
-
-    } else{
-
-        ip = client_req.connection.remoteAddress
-
-    }
-
-    if(client_req.headers['cf-ipcountry']){
-
-        country = client_req.headers['cf-ipcountry']
-
-    } else {
-
-        country = 'Unknown'
-
-    }
 
     let domain = domains.find(x => x.domain === client_req.headers.host)
     if(!domain){
@@ -78,6 +56,8 @@ async function proxy(client_req, client_res) {
 
         })
 
+        emitter.emit('error', options, err1)
+
         options = {
             hostname: 'localhost',
             port: 2086,
@@ -100,7 +80,9 @@ async function proxy(client_req, client_res) {
 
     client_req.pipe(proxy, {
         end: true
-    })
+    });
+
+    emitter.emit('proxied', options)
 }
 
 module.exports = proxy
