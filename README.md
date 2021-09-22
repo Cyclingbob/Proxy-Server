@@ -45,6 +45,12 @@ Head to [mongodb.com](https://account.mongodb.com/account "Mongodb") and sign up
 
 To customize display and user access, edit the `config.js` in the main directory of your clone (where `index.js` lies)
 
+# Plugins
+
+Plugins are here!
+Plugins currently allow you to listen in and handle requests.
+Documentation will be created soon so you can fully utilise the api. For now have a look in plugins/helloworld.js
+
 # Copyright
 
 ©Cyclingbob 2021. All rights reserved. Unauthorised distribution or modification is not permitted.
