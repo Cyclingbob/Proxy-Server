@@ -13,7 +13,7 @@ const fetch = require('node-fetch')
 
 const fs = require('fs')
 
-function panel(){
+function panel(cache){
 
     const app = express()
 
@@ -264,7 +264,6 @@ function panel(){
     })
 
     app.post('/ip/challenge', async (req, res) => {
-
         var data = await fetch(`https://api.cloudflare.com/client/v4/accounts/${config.cloudflare_account_id}/firewall/access_rules/rules`, {
             headers: {
                 "X-Auth-Key": config.cloudflare_api_key,
