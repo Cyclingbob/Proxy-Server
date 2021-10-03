@@ -49,7 +49,7 @@ To customize display and user access, edit the `config.js` in the main directory
 
 Plugins are here!
 Plugins currently allow you to listen in and handle requests.
-Documentation will be created soon so you can fully utilise the api. For now have a look in plugins/helloworld.js
+Check out [plugins.md](https://github.com/Cyclingbob/Proxy-Server/blob/main/plugins.md "Plugins")
 
 # Copyright
 
