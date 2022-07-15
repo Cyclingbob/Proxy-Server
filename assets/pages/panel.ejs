@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Panel</title>
+        <link rel="stylesheet" href="/panel/public/panel.css">
+        <link rel="stylesheet" href="/panel/public/panel_select.css">
+    </head>
+    <body>
+        <div id="side-bar">
+            <ul>
+                <li onclick="tab(event, 'home', 'passive')" class="tab-links active">
+                    <h2 class="first">Home</h2>
+                </li>
+                <% plugin_pages.forEach(function(plugin) { %>
+                    <p><%= plugin.name %></p>
+                    <% plugin.pages.forEach(function(page) { %>
+                        <li onclick="tab(event, '<%= page.path %>', '<%= page.type %>')" class="tab-links active"><h2><%= page.name %></h2></li>
+                        <script></script>
+                    <% }); %>
+                <% }); %>
+            </ul>
+        </div>
+        <div id="home" class="tabs">
+            <div class="content">
+                <h2>Domains</h2>
+                <ul id="domains" class="domains">
+                    <% if(domains.length > 0){ %>
+                        <% domains.forEach(function(domain) { %>
+                            <li><%= domain.domain %> => <%= domain.ip %>:<%= domain.port %><button class="delete-domain" id="<%= domain.domain %>" onclick="delete_domain(event)">Delete</button></li>
+                        <% }); %>
+                    <% } else { %>
+                        <p id="no-domains-p">No domains setup</p>
+                    <% } %>
+                </ul>
+                <h3>Domain for Panel</h3>
+                <div class="custom-select" style="width:300px;">
+                    <select>
+                        <option value="<%= domains.find(a => a.domain === current_panel_domain).domain %>"><%= domains.find(a => a.domain === current_panel_domain).domain %></option>
+                        <% domains.forEach(function(domain) { %>
+                            <option value="<%= domain.domain %>"><%= domain.domain %></option>
+                        <% }); %>
+                    </select>
+                    <p id="current-set-domain"></p>
+                </div>
+                <h3>Add domain</h3>
+                <form id="create-domain-form">
+                    <input name="domain" placeholder="Domain">
+                    <input name="ip" placeholder="IP">
+                    <input name="port" placeholder="Port">
+                    <input type="submit" value="Add">
+                </form>
+            </div>
+        </div>
+        <% plugin_pages.forEach(function(plugin) { %>
+            <% plugin.pages.forEach(function(page) { %>
+                <% if(page.type === "passive"){ %>
+                    <div id="<%= page.path %>" class="tabs" style="display:none"><%- page.html %></div>
+                <% } %>
+            <% }); %>
+        <% }); %>
+        <iframe id="active-page" class="tabs" style="display:none;width:calc(100% - 200px);height:calc(100% - 10px);"></iframe>
+        <script defer src="/panel/public/panel.js"></script>
+    </body>
+</html>
