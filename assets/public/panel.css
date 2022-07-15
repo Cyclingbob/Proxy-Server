@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+* {
+    font-family: 'Noto Sans', sans-serif;
+}
+body {
+    margin: 0;
+    display: flex;
+}
+#side-bar {
+    width: 200px;
+    height: 100%;
+    background-color: #008ccd;
+    position: sticky;
+    left: 0;
+}
+#side-bar ul {
+    list-style-type: none;
+    padding: 0;
+}
+#side-bar ul li {
+    width: 100%;
+    height: 30px;
+}
+#side-bar ul li:hover h2 {
+    cursor: pointer;
+    color: rgb(226, 226, 226);
+}
+#side-bar ul p {
+    color: white;
+    font-size: 20px;
+    margin: 0px;
+    padding: 20px 0px 0px 0px;
+    text-align: center;
+    text-decoration: underline;
+}
+#side-bar ul li h2 {
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    margin: 0px;
+    font-size: 20px;
+}
+#side-bar ul li h2:not(:first) {
+    padding-top: 10px;
+}
+.domains {
+    list-style-type: none;
+    padding: 0;
+}
+.domains li {
+    color: white;
+    background-color: #008ccd;
+    padding: 8px;
+}
+.domains li:first-child {
+    border-radius: 8px 8px 0 0;
+    border-bottom: solid 2px white;
+}
+.domains li:not(domains li:first-child):not(domains li:last-child){
+    border-bottom: solid 2px;
+}
+.domains li:last-child {
+    border-radius: 0 0 8px 8px;
+}
+.domains li:only-child {
+    border-radius: 8px
+}
+.delete-domain {
+    border-radius: 8px;
+    background-color: white;
+    border: none;
+    margin-left: 8px;
+    margin-bottom: 1px;
+    float:right;
+}
+.delete-domain:hover {
+    cursor: pointer;
+    background-color: #dadada;
+}
+.tabs {
+    animation: fadeEffect 1s;
+    width: calc(100% - 200px);
+    position: absolute;
+    right: 0;
+}
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@media only screen and (max-width: 620px) {
+    section {        
+        word-wrap: break-word;
+        min-height: 300px;
+        height: auto;
+        flex-direction: column;
+    }
+    section .content {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    header nav a {
+        font-size: 22px;
+    }
+}
+@media only screen and (min-width: 620px){
+    section {
+        display: flex;
+    }
+    .content {
+        padding: 20px;
+    }
+}
+#create-domain-form {
+    border-radius: 8px;
+    background-color: #008ccd;
+    padding: 8px;
+    width: fit-content;
+}
+#create-domain-form input {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: white;
+    outline: none;
+    border: none;
+}
