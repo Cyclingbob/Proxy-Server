@@ -26,7 +26,8 @@ Plugins are here!
 Plugins allow you to extend the capabilities of the proxy-server including the addition of your own custom pages.
 Check out [plugins.md](https://github.com/Cyclingbob/Proxy-Server/blob/main/plugins.md "Plugins")
 
-#Bug spotting
+# Bug spotting
+
 Should you spot a bug please open an issue in the Issues tab and clearly explain what the bug is and a possible fix.
 
 # Copyright information
